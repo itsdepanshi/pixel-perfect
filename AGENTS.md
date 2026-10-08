@@ -8,3 +8,9 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Architecture
+- Keep the Vedic brand experience in the index route with anchored chapters; it is one continuous scroll narrative rather than separate content pages.
+- Reuse the original product through a dedicated CandleArtwork component and an asset pointer; cropping is presentational and never redraws the uploaded packaging.
+- Keep motion in CSS and one browser-side scene hook with reduced-motion guards; no server or persistent storage is needed for the brand presentation.
+- Treat collection moods as editorial concepts until confirmed specifications arrive; never invent product claims or contact destinations.
