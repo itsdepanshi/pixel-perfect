@@ -55,6 +55,8 @@ function Index() {
         <div className="hero-kicker"><span className="eyebrow">Rooted in nature. Made for the soul.</span><h1 className="hero-title">VEDIC</h1></div>
         <span className="vertical-note eyebrow">A little light. A deeper connection.</span>
         <div className="hero-index eyebrow">01 <span /> 06</div>
+        <div className="hero-editorial hero-editorial-left"><span className="hero-editorial-rule" aria-hidden="true" /><p>01 — THE ART OF SLOWING DOWN</p></div>
+        <div className="hero-editorial hero-editorial-right"><span className="hero-editorial-rule" aria-hidden="true" /><p>NATURE · RITUAL · STILLNESS</p></div>
         <div className="hero-object"><svg className="smoke-lines" viewBox="0 0 120 240" aria-hidden="true"><path d="M60 240 C20 190 110 170 60 120 S30 40 70 0" /><path d="M65 240 C100 180 30 130 70 90 S90 30 50 0" /></svg><CandleArtwork eager /></div>
         <div className="hero-caption"><p>Light up the Vibe with Vedic</p><Button variant="ritual" asChild><a href="#story" className="ritual-link">Enter the ritual <ArrowDown /></a></Button></div>
         <div className="hero-bottom"><span className="eyebrow">Purity in every light.<br />Presence in every moment.</span><span className="eyebrow">Inspired by ancient wisdom<br />Designed for everyday rituals</span></div>

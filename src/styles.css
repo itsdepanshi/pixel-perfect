@@ -86,6 +86,9 @@
   --olive: oklch(0.78 0.07 112);
   --deep-olive: oklch(0.29 0.042 119);
   --light-pool: oklch(0.99 0.033 96 / 65%);
+  --hero-editorial-ink: var(--linen);
+  --hero-editorial-line: color-mix(in oklab, var(--olive) 65%, transparent);
+  --hero-editorial-shadow: 0 1px 2px color-mix(in oklab, var(--primary) 55%, transparent);
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Nunito Sans', sans-serif;
   --shadow-soft: 0 14px 60px oklch(0.29 0.042 119 / 12%);
@@ -182,6 +185,15 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 .vertical-note { position: absolute; left: 5%; top: 45%; writing-mode: vertical-rl; transform: rotate(180deg); }
 .hero-index { position: absolute; right: 5%; top: 45%; display: flex; align-items: center; gap: 15px; }
 .hero-index span { width: 64px; height: 1px; background: var(--border); }
+.hero-editorial { position: absolute; top: 57%; width: 24%; color: var(--hero-editorial-ink); font-family: var(--font-body); font-size: 11px; font-weight: 500; line-height: 1.8; letter-spacing: 0; text-shadow: var(--hero-editorial-shadow); animation: editorial-enter 1.4s cubic-bezier(.2,.7,.2,1) both; pointer-events: none; }
+.hero-editorial-left { left: 11%; animation-delay: .35s; }
+.hero-editorial-right { right: 11%; text-align: right; animation-delay: .65s; }
+.hero-editorial p { margin: 15px 0 0; }
+.hero-editorial-rule { display: block; width: 52px; height: 1px; background: var(--hero-editorial-line); }
+.hero-editorial-right .hero-editorial-rule { margin-left: auto; }
+@keyframes editorial-enter { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 1000px) { .hero-editorial { display: none; } }
+@media (prefers-reduced-motion: reduce) { .hero-editorial { animation: none; opacity: 1; transform: none; } }
 .ritual-link { display: inline-flex; gap: 15px; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 7px; font-size: 11px; text-transform: uppercase; }
 .ritual-link svg { width: 13px; }
 .chapter { padding: 110px 8%; position: relative; }
