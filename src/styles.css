@@ -271,7 +271,7 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 @media (max-height: 800px) and (min-width: 768px) {
  .hero-kicker { margin-top: 105px; }
  .hero-title { font-size: 160px; margin-top: 15px; }
- .hero-object { top: 36%; width: 240px; }
+ .hero-object { top: 36%; width: 210px; }
  .hero-caption { bottom: 85px; }
  .hero-caption p { font-size: 24px; margin-bottom: 12px; }
  .hero-bottom { bottom: 20px; }
