@@ -88,7 +88,7 @@
   --light-pool: oklch(0.99 0.033 96 / 65%);
   --hero-editorial-ink: var(--linen);
   --hero-editorial-line: color-mix(in oklab, var(--olive) 65%, transparent);
-  --hero-editorial-shadow: 0 1px 2px var(--primary), 0 0 5px color-mix(in oklab, var(--primary) 65%, transparent);
+  --hero-editorial-shadow: 0 1px 2px color-mix(in oklab, var(--primary) 55%, transparent);
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Nunito Sans', sans-serif;
   --shadow-soft: 0 14px 60px oklch(0.29 0.042 119 / 12%);
