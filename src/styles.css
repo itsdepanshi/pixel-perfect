@@ -265,6 +265,8 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none !important; transition:none !important; } .reveal,.letter-reveal span { opacity:1; transform:none; } .hero-object { transform:none; } .cursor,.smoke-lines { display:none; } }
 .floating-nav:not(.visible) { visibility: hidden; }
+.hero { height: min(960px, 90svh); }
+.story { padding-top: 35px; }
 .menu-panel .quiet-nav { flex-wrap: wrap; gap: 20px; }
 @media (max-height: 800px) and (min-width: 768px) {
  .hero-kicker { margin-top: 105px; }
@@ -281,3 +283,4 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
  .hero-title { margin-top: 20px; }
  .hero-caption { bottom: 95px; }
 }
+@media (max-width: 360px) { .hero-title { font-size: 94px; } .hero-object { width: 200px; } .hero-caption p { font-size: 20px; } }
