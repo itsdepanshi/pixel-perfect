@@ -9,17 +9,20 @@ export function useVedicScene() {
   useEffect(() => {
     const root = pageRef.current;
     if (!root) return;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
     let frame = 0;
     const updateScroll = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         setScrolled(window.scrollY > 480);
-        if (!reduced) {
+        if (!motionPreference.matches) {
           const progress = Math.min(window.scrollY / 800, 1);
           root.style.setProperty('--lift', `${progress * 45}px`);
           root.style.setProperty('--candle-scale', `${1 + progress * .12}`);
           root.style.setProperty('--smoke-opacity', `${progress * .3}`);
+        } else {
+          ['--lift', '--candle-scale', '--smoke-opacity', '--parallax-x', '--parallax-y'].forEach(property => root.style.removeProperty(property));
         }
         const steps = root.querySelectorAll<HTMLElement>('[data-ritual-step]');
         let active = 0;
@@ -34,7 +37,7 @@ export function useVedicScene() {
     }), { threshold: .12 });
     root.querySelectorAll('.reveal').forEach(element => observer.observe(element));
     const move = (event: PointerEvent) => {
-      if (event.pointerType !== 'mouse' || reduced) return;
+      if (event.pointerType !== 'mouse' || motionPreference.matches || !finePointer.matches) return;
       const cursor = cursorRef.current;
       if (cursor) {
         cursor.style.left = `${event.clientX}px`;
@@ -46,8 +49,9 @@ export function useVedicScene() {
     };
     window.addEventListener('scroll', updateScroll, { passive: true });
     window.addEventListener('pointermove', move, { passive: true });
+    motionPreference.addEventListener('change', updateScroll);
     updateScroll();
-    return () => { observer.disconnect(); cancelAnimationFrame(frame); window.removeEventListener('scroll', updateScroll); window.removeEventListener('pointermove', move); };
+    return () => { observer.disconnect(); cancelAnimationFrame(frame); window.removeEventListener('scroll', updateScroll); window.removeEventListener('pointermove', move); motionPreference.removeEventListener('change', updateScroll); };
   }, []);
   return { pageRef, cursorRef, scrolled, ritualStep };
 }

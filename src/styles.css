@@ -167,15 +167,15 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 .nav-link:hover::after { transform: scaleX(1); }
 .floating-nav { position: fixed; z-index: 30; bottom: 24px; left: 50%; transform: translate(-50%, 120px); transition: transform .6s; background: var(--linen); box-shadow: var(--shadow-soft); padding: 14px 23px; border: 1px solid var(--border); border-radius: 40px; gap: 23px; }
 .floating-nav.visible { transform: translate(-50%, 0); }
-.hero { position: relative; min-height: 780px; height: min(960px, 96svh); isolation: isolate; display: flex; flex-direction: column; align-items: center; }
+.hero { position: relative; min-height: 560px; height: min(960px, 96svh); isolation: isolate; display: flex; flex-direction: column; align-items: center; }
 .hero-background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .28; mix-blend-mode: multiply; z-index: -3; }
 .hero::after { content: ''; position: absolute; inset: 0; z-index: -2; background: linear-gradient(0deg,var(--linen),transparent 30%,transparent 80%,var(--linen)); }
 .hero-kicker { margin-top: 145px; text-align: center; }
 .hero-title { font-size: 224px; line-height: .85; margin: 20px 0 0; }
 .hero-object { position: absolute; top: 37%; width: 340px; transform: translate3d(var(--parallax-x,0px),calc(var(--parallax-y,0px) - var(--lift,0px)),0) scale(var(--candle-scale,1)); transition: transform .2s ease-out; }
-.candle-art { position: relative; width: 100%; aspect-ratio: 350 / 360; overflow: hidden; mix-blend-mode: multiply; }
-.candle-art img { position: absolute; width: 274.3%; max-width: none; height: auto; left: -24.85%; top: -66.7%; }
-.candle-aura { position: absolute; width: 120%; height: 85%; left: -10%; top: -4%; border-radius: 50%; background: var(--light-pool); filter: blur(45px); z-index: -1; animation: breathe-light 6s ease-in-out infinite; }
+.candle-art { position: relative; width: 100%; aspect-ratio: 662 / 672; }
+.candle-art img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.hero-object { will-change: transform; }
 .hero-caption { position: absolute; bottom: 105px; text-align: center; }
 .hero-caption p { font-family: var(--font-display); font-size: 27px; margin: 0 0 19px; }
 .hero-bottom { position: absolute; bottom: 30px; left: 5%; right: 5%; display: flex; justify-content: space-between; align-items: flex-end; }
@@ -201,7 +201,7 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 .ritual-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 8%; align-items: start; }
 .ritual-scene { position: sticky; top: 150px; text-align: center; min-height: 470px; padding-top: 35px; }
 .ritual-scene h2 { font-size: 66px; margin: 0 0 30px; line-height: 1.05; }
-.ritual-scene .candle-art { width: 220px; margin: auto; background: var(--linen); border-radius: 0 0 25% 25%; mix-blend-mode: normal; }
+.ritual-scene .candle-art { width: 220px; margin: auto; }
 .ritual-step { min-height: 310px; padding: 38px 0; border-top: 1px solid color-mix(in oklab,var(--linen) 25%,transparent); opacity: .4; transition: opacity .7s; }
 .ritual-step.active { opacity: 1; }
 .ritual-step h3 { font-size: 60px; margin: 8px 0 15px; }
@@ -235,7 +235,7 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 .finale { background: var(--primary); color: var(--linen); min-height: 800px; text-align: center; display: flex; flex-direction: column; align-items: center; padding: 95px 8% 30px; position: relative; }
 .finale h2 { font-size: 94px; margin: 25px 0 12px; line-height: 1; }
 .finale > p { font-size: 14px; opacity: .75; }
-.finale .candle-art { width: 210px; background: var(--linen); mix-blend-mode: normal; margin: 40px 0; border-radius: 45% 45% 30% 30%; }
+.finale .candle-art { width: 210px; margin: 40px 0; }
 .footer-bottom { margin-top: auto; display: flex; justify-content: space-between; width: 100%; align-items: end; text-align: left; border-top: 1px solid color-mix(in oklab,var(--linen) 20%,transparent); padding-top: 25px; }
 .footer-bottom .wordmark { font-size: 48px; }
 .footer-bottom p { font-size: 10px; margin-top: 10px; opacity: .7; }
@@ -264,3 +264,23 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
  .site-header { padding: 25px 7%; } .site-header>.quiet-nav { display:none; } .mobile-menu { display:inline-flex; } .hero { min-height: 720px; height: 94svh; } .hero-kicker { margin-top: 125px; } .hero-title { font-size: 118px; margin-top: 30px; } .hero-object { width: 270px; top: 36%; } .hero-caption { bottom: 110px; } .hero-caption p { font-size: 22px; } .vertical-note,.hero-index { display:none; } .hero-bottom { left: 7%; right:7%; } .hero-bottom .eyebrow { max-width: 115px; font-size: 8px; } .chapter { padding: 75px 7%; } .story { grid-template-columns: 1fr; gap: 45px; } .story h2 { font-size: 52px; } .story-image { max-width: 100%; } .story-photo { aspect-ratio: 1.1; } .chapter-head { margin-bottom: 30px; } .ritual-layout { grid-template-columns: 1fr; gap: 35px; } .ritual-scene { position: relative; top: auto; min-height: 350px; padding: 0; } .ritual-scene h2 { font-size: 51px; } .ritual-scene .candle-art { width: 180px; } .ritual-step { min-height: 240px; } .ritual-step h3 { font-size: 48px; } .collection-title { display: block; } .collection-title h2 { font-size: 51px; } .collection-title p { margin-top: 20px; } .mood-grid { grid-template-columns: 1fr; gap: 40px; } .mood:nth-child(even) { margin-top: 0; } .mood-stage { height: 340px; } .about-strip { flex-direction: column; padding: 45px 7%; gap:25px; } .finale { min-height: 740px; padding: 75px 7% 35px; } .finale h2 { font-size: 57px; } .footer-bottom { gap:30px; align-items:start; } .footer-links { flex-direction:column; gap:12px; align-items:end; } .floating-nav { padding: 12px 17px; gap:18px; bottom:15px; } .floating-nav .nav-link { font-size:10px; } .floating-nav .extra-nav { display:none; } .detail-content { padding:35px 25px; max-height:90svh; overflow-y:auto; } .detail-layout { grid-template-columns:1fr; gap: 20px; } .detail-product .candle-art { width:180px; margin:auto; } .detail-title { font-size:50px; }
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation:none !important; transition:none !important; } .reveal,.letter-reveal span { opacity:1; transform:none; } .hero-object { transform:none; } .cursor,.smoke-lines { display:none; } }
+.floating-nav:not(.visible) { visibility: hidden; }
+.hero { height: min(960px, 90svh); }
+.story { padding-top: 35px; }
+.menu-panel .quiet-nav { flex-wrap: wrap; gap: 20px; }
+@media (max-height: 800px) and (min-width: 768px) {
+ .hero-kicker { margin-top: 105px; }
+ .hero-title { font-size: 160px; margin-top: 15px; }
+ .hero-object { top: 36%; width: 210px; }
+ .hero-caption { bottom: 85px; }
+ .hero-caption p { font-size: 24px; margin-bottom: 12px; }
+ .hero-bottom { bottom: 20px; }
+}
+@media (max-width: 767px) {
+ .hero { min-height: 620px; }
+ .hero-object { width: 230px; top: 35%; }
+ .hero-kicker { margin-top: 105px; }
+ .hero-title { margin-top: 20px; }
+ .hero-caption { bottom: 95px; }
+}
+@media (max-width: 360px) { .hero-title { font-size: 94px; } .hero-object { width: 200px; } .hero-caption p { font-size: 20px; } }
