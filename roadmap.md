@@ -5,5 +5,5 @@
 - [x] Add collection mood details and quiet navigation.
 - [x] Verify interactions, mobile layout, and reduced-motion behavior.
 - [x] Add reference-inspired botanical artwork only to the hero background, preserving the existing composition.
-- [ ] Implement and verify The Awakening on the featured ritual candle only.
+- [x] Implement and verify The Awakening on the featured ritual candle only.
 - [ ] Original candle SVG, exact font/color files, confirmed collection specifications, and contact/social destinations await brand assets.
