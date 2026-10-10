@@ -4,6 +4,7 @@ import { ArrowDown, ArrowUpRight, Leaf, Wind, Flame, Heart, Menu, X, Sprout } fr
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { CandleArtwork } from '@/components/candle-artwork';
+import { AwakeningCandle } from '@/components/awakening-candle';
 import { useVedicScene } from '@/hooks/use-vedic-scene';
 import botanical from '@/assets/vedic-botanical.jpg';
 import heroBotanical from '@/assets/vedic-hero-botanical.jpg';
@@ -70,7 +71,7 @@ function Index() {
 
       <section id="ritual" className="chapter ritual-section">
         <div className="chapter-head eyebrow">02 / The art of slowing down</div>
-        <div className="ritual-layout"><div className="ritual-scene" data-step={ritualStep}><h2>The Vedic<br /><em>Ritual.</em></h2><CandleArtwork /><div className="ritual-mark" aria-hidden="true">{ritualStep === 0 ? <Flame strokeWidth={1} /> : ritualStep === 1 ? <Wind strokeWidth={1} /> : <Heart strokeWidth={1} />}</div><span className="eyebrow">One candle. A thousand little moments.</span></div>
+        <div className="ritual-layout"><div className="ritual-scene" data-step={ritualStep}><h2>The Vedic<br /><em>Ritual.</em></h2><AwakeningCandle /><div className="ritual-mark" aria-hidden="true">{ritualStep === 0 ? <Flame strokeWidth={1} /> : ritualStep === 1 ? <Wind strokeWidth={1} /> : <Heart strokeWidth={1} />}</div><span className="eyebrow">One candle. A thousand little moments.</span></div>
           <div>{[
             ['Light', 'Strike a match. Let the light mark a gentle beginning. Leave the rush of the day behind.'],
             ['Breathe', 'A little less noise. A little more space. Take a slow breath and settle into this moment.'],
