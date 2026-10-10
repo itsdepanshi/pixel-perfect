@@ -6,6 +6,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/compone
 import { CandleArtwork } from '@/components/candle-artwork';
 import { useVedicScene } from '@/hooks/use-vedic-scene';
 import botanical from '@/assets/vedic-botanical.jpg';
+import heroBotanical from '@/assets/vedic-hero-botanical.jpg';
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
@@ -51,7 +52,7 @@ function Index() {
     {navigation(true)}
     <main>
       <section id="home" className="hero" aria-label="The world of Vedic">
-        <img className="hero-background" src={botanical} width={1920} height={1280} alt="" />
+        <img className="hero-background" src={heroBotanical} width={1536} height={1024} alt="" aria-hidden="true" />
         <div className="hero-kicker"><span className="eyebrow">Rooted in nature. Made for the soul.</span><h1 className="hero-title">VEDIC</h1></div>
         <span className="vertical-note eyebrow">A little light. A deeper connection.</span>
         <div className="hero-index eyebrow">01 <span /> 06</div>
