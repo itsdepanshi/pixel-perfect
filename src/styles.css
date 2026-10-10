@@ -89,6 +89,8 @@
   --awakening-light: radial-gradient(ellipse, color-mix(in oklab, var(--olive) 38%, transparent), color-mix(in oklab, var(--olive) 12%, transparent) 45%, transparent 72%);
   --awakening-sheen: linear-gradient(105deg, transparent 20%, color-mix(in oklab, var(--linen) 40%, transparent) 50%, transparent 80%);
   --awakening-line: color-mix(in oklab, var(--olive) 45%, transparent);
+  --hero-motion-line: color-mix(in oklab, var(--primary) 32%, var(--olive));
+  --hero-motion-glow: radial-gradient(ellipse, color-mix(in oklab, var(--linen) 80%, transparent), color-mix(in oklab, var(--olive) 25%, transparent) 45%, transparent 72%);
   --hero-editorial-ink: var(--linen);
   --hero-editorial-line: color-mix(in oklab, var(--olive) 65%, transparent);
   --hero-editorial-shadow: 0 1px 2px color-mix(in oklab, var(--primary) 55%, transparent);
@@ -182,6 +184,44 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 .candle-art { position: relative; width: 100%; aspect-ratio: 662 / 672; }
 .candle-art img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .hero-object { will-change: transform; }
+.hero-cinematic-object { transform: translateY(var(--hero-rise,0px)) scale(var(--hero-growth,1)) rotate(var(--hero-turn,0deg)); transition: none; perspective: 1000px; pointer-events: none; }
+.hero-product-reveal { position: relative; }
+.hero-awakened .hero-product-reveal { animation: hero-awaken 1.8s cubic-bezier(.22,.7,.2,1) both; }
+.hero-light { position: absolute; inset: -35% -40%; background: var(--hero-motion-glow); transform: scale(var(--hero-light-growth,1)); opacity: calc(var(--hero-ring-opacity,1) * .75); z-index: -1; }
+.hero-light-waves,.hero-orbit-system,.hero-botanical-burst { position: absolute; inset: 0; pointer-events: none; }
+.hero-light-waves { opacity: var(--hero-ring-opacity,1); transform: scale(var(--hero-light-growth,1)); z-index: -1; }
+.hero-wave { position: absolute; inset: 20% -10%; border: 1px solid var(--hero-motion-line); border-radius: 50%; opacity: 0; }
+.hero-awakened .hero-wave { animation: hero-light-wave 3s both; }
+.hero-awakened .hero-wave-1 { animation-delay: .4s; }
+.hero-awakened .hero-wave-2 { animation-delay: .8s; }
+.hero-orbit-system { opacity: calc(var(--hero-ring-opacity,1) * .5); transform: scale(var(--hero-light-growth,1)); z-index: -1; }
+.hero-orbit { position: absolute; width: 150%; height: 90%; left: -25%; top: 10%; fill: none; stroke: var(--hero-motion-line); stroke-width: .65; animation: hero-orbit-turn 24s linear infinite; animation-play-state: paused; }
+.hero-motion-visible .hero-orbit { animation-play-state: running; }
+.hero-orbit-1 { animation-direction: reverse; animation-delay: -8s; }
+.hero-orbit-2 { animation-delay: -16s; }
+.hero-glass-light { position: absolute; inset: 17% 14% 8%; border-radius: 0 0 20% 20%; overflow: hidden; }
+.hero-glass-light span { position: absolute; inset: 0; background: var(--awakening-sheen); opacity: 0; }
+.hero-awakened .hero-glass-light span { animation: awakening-sweep 2s .6s both; }
+.hero:has(.hero-cinematic-object) .hero-kicker { transform: translateY(var(--hero-heading-rise,0px)); opacity: var(--hero-copy-opacity,1); }
+.hero:has(.hero-cinematic-object) .hero-caption { transform: translateY(calc(var(--hero-heading-rise,0px) * -.2)); opacity: var(--hero-copy-opacity,1); }
+.hero-burst-leaf,.hero-dust { position: absolute; left: 50%; top: 45%; opacity: 0; color: var(--hero-motion-line); }
+.hero-burst-leaf svg { width: 24px; height: 30px; }
+.hero-burst-leaf-0 { --burst-x: -160px; --burst-y: -90px; }
+.hero-burst-leaf-1 { --burst-x: 150px; --burst-y: -110px; }
+.hero-burst-leaf-2 { --burst-x: -145px; --burst-y: 65px; }
+.hero-burst-leaf-3 { --burst-x: 155px; --burst-y: 75px; }
+.hero-burst .hero-burst-leaf { animation: hero-leaf-release 2.6s ease-out both; }
+.hero-burst .hero-burst-leaf-1,.hero-burst .hero-burst-leaf-3 { animation-delay: .15s; }
+.hero-dust { width: 3px; height: 3px; border-radius: 50%; background: var(--linen); --burst-x: -90px; --burst-y: -115px; }
+.hero-dust-1 { --burst-x: 100px; --burst-y: 50px; }
+.hero-dust-2 { --burst-x: 80px; --burst-y: -90px; }
+.hero-burst .hero-dust { animation: hero-leaf-release 2s .1s ease-out both; }
+@keyframes hero-awaken { 0% { opacity: .1; transform: translateY(55px) scale(.65) rotateX(9deg); } 70% { opacity: 1; transform: translateY(-3px) scale(1.012) rotateX(-1deg); } 100% { opacity: 1; transform: translateY(0) scale(1) rotateX(0deg); } }
+@keyframes hero-light-wave { 0% { opacity: 0; transform: scale(.4); } 40% { opacity: .3; } 100% { opacity: 0; transform: scale(1.8); } }
+@keyframes hero-orbit-turn { from { transform: rotate(-18deg) rotateY(0deg); } to { transform: rotate(-18deg) rotateY(360deg); } }
+@keyframes hero-leaf-release { 0% { opacity: 0; transform: translate(0,0) scale(.5) rotate(0deg); } 25% { opacity: .7; transform: translate(calc(var(--burst-x) * .3),calc(var(--burst-y) - 35px)) rotate(25deg); } 100% { opacity: 0; transform: translate(var(--burst-x),var(--burst-y)) scale(.8) rotate(75deg); } }
+@media (max-width: 767px), (pointer: coarse) { .hero-orbit-1,.hero-orbit-2,.hero-botanical-burst { display: none; } .hero-orbit { animation: none; } .hero-light-waves { opacity: .2; } }
+@media (prefers-reduced-motion: reduce) { .hero-cinematic-object,.hero-product-reveal,.hero:has(.hero-cinematic-object) .hero-kicker,.hero:has(.hero-cinematic-object) .hero-caption { transform: none; opacity: 1; } .hero-light-waves,.hero-botanical-burst,.hero-glass-light { display: none; } .hero-light { opacity: .3; transform: none; } }
 .hero-caption { position: absolute; bottom: 105px; text-align: center; }
 .hero-caption p { font-family: var(--font-display); font-size: 27px; margin: 0 0 19px; }
 .hero-bottom { position: absolute; bottom: 30px; left: 5%; right: 5%; display: flex; justify-content: space-between; align-items: flex-end; }
