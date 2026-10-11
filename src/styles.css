@@ -331,8 +331,21 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 .finale-entrance-layer,.finale-float-layer { position: relative; }
 .finale-awakened .finale-entrance-layer { animation: finale-enter 1.8s cubic-bezier(.2,.7,.2,1) both; }
 .finale-awakened .finale-float-layer { animation: finale-float 7s 1.8s ease-in-out infinite; }
-.finale .finale-vector-art { width: 100%; margin: 0; overflow: hidden; aspect-ratio: 1375 / 1390; }
-.finale-vector-art img { position: absolute; width: 290.91%; height: auto; max-width: none; left: -25.45%; top: -76.26%; }
+.finale .finale-awakening .candle-art { width: 100%; margin: 0; }
+.finale-leaves { position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: var(--finale-orbit-opacity,1); }
+.finale-leaf { position: absolute; width: 32px; height: 50px; color: var(--olive); opacity: .65; }
+.finale-leaf svg { width: 100%; height: 100%; fill: var(--finale-motion-highlight); stroke: currentColor; stroke-width: .8; }
+.finale-leaf-0 { left: -38%; top: 8%; --leaf-turn: -28deg; }
+.finale-leaf-1 { right: -38%; top: 20%; --leaf-turn: 35deg; }
+.finale-leaf-2 { left: -30%; bottom: 6%; --leaf-turn: -65deg; }
+.finale-leaf-3 { right: -28%; bottom: 0; --leaf-turn: 70deg; }
+.finale-awakened .finale-leaf { animation: finale-leaf-drift 8s ease-in-out infinite; }
+.finale-awakened .finale-leaf-1 { animation-delay: -2s; }
+.finale-awakened .finale-leaf-2 { animation-delay: -4s; }
+.finale-awakened .finale-leaf-3 { animation-delay: -6s; }
+@keyframes finale-leaf-drift { 0%,100% { transform: translate(0,0) rotate(var(--leaf-turn)); opacity: .45; } 50% { transform: translate(8px,-20px) rotate(calc(var(--leaf-turn) + 18deg)); opacity: .75; } }
+@media (max-width: 767px), (pointer: coarse) { .finale-leaf { width: 24px; height: 38px; } .finale-leaf-0 { left: -23%; } .finale-leaf-1 { right: -23%; } .finale-leaf-2,.finale-leaf-3 { display: none; } }
+@media (prefers-reduced-motion: reduce) { .finale-leaf { animation: none; transform: rotate(var(--leaf-turn)); opacity: .5; } }
 .finale-aura,.finale-orbits,.finale-particles { position: absolute; inset: 0; z-index: -1; opacity: var(--finale-orbit-opacity,1); }
 .finale-aura-wave { position: absolute; inset: 12% -35%; border: 1px solid var(--finale-motion-line); background: var(--finale-motion-highlight); border-radius: 50%; opacity: 0; }
 .finale-awakened .finale-aura-wave { animation: finale-aura 3s ease-out infinite; }

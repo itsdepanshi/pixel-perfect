@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import candle from '@/assets/vedic-finale-candle.svg.asset.json';
+import { CandleArtwork } from '@/components/candle-artwork';
 
 /** Separate scroll, pointer, entrance and float layers never compete for transforms. */
 export function FinaleAwakening() {
@@ -62,7 +62,8 @@ export function FinaleAwakening() {
       <div className="finale-aura" aria-hidden="true">{[0, 1, 2].map(i => <span className={`finale-aura-wave finale-aura-wave-${i}`} key={i} />)}</div>
       <div className="finale-orbits" aria-hidden="true">{[0, 1].map(i => <svg className={`finale-orbit finale-orbit-${i}`} viewBox="0 0 400 220" key={i}><ellipse cx="200" cy="110" rx="188" ry="72" /><g transform="translate(350 63) rotate(25)"><path d="M0 18 Q-8 -6 17 -15 Q23 6 0 18 M0 18 L14 -10" /></g></svg>)}</div>
       <div className="finale-particles" aria-hidden="true">{[0, 1, 2, 3].map(i => <span className={`finale-particle finale-particle-${i}`} key={i} />)}</div>
-      <div className="finale-pointer-layer"><div className="finale-entrance-layer"><div className="finale-float-layer"><div className="candle-art finale-vector-art"><img src={candle.url} alt="Vedic candle with wooden lid and original botanical label" width={4000} height={3200} loading="lazy" /></div><div className="finale-shimmer" aria-hidden="true"><span /></div></div></div></div>
+      <div className="finale-leaves" aria-hidden="true">{[0, 1, 2, 3].map(i => <span className={`finale-leaf finale-leaf-${i}`} key={i}><svg viewBox="0 0 40 64"><path d="M20 58 C-3 39 4 13 32 4 C42 28 33 45 20 58Z" /><path d="M17 63 Q20 35 32 4 M21 40 L10 29 M25 27 L34 22" /></svg></span>)}</div>
+      <div className="finale-pointer-layer"><div className="finale-entrance-layer"><div className="finale-float-layer"><CandleArtwork /><div className="finale-shimmer" aria-hidden="true"><span /></div></div></div></div>
     </div>
   </div>;
 }
