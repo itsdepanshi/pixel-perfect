@@ -7,4 +7,5 @@
 - [x] Add reference-inspired botanical artwork only to the hero background, preserving the existing composition.
 - [x] Implement and verify The Awakening on the featured ritual candle only.
 - [x] Implement and verify The Vedic Awakening on the existing opening hero.
-- [ ] Original candle SVG, exact font/color files, confirmed collection specifications, and contact/social destinations await brand assets.
+- [ ] Apply and verify the uploaded candle SVG animation on the final “Light up the vibe.” slide only.
+- [ ] Exact font/color files, confirmed collection specifications, and contact/social destinations await brand assets.
