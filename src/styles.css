@@ -94,6 +94,9 @@
   --hero-editorial-ink: var(--linen);
   --hero-editorial-line: color-mix(in oklab, var(--olive) 65%, transparent);
   --hero-editorial-shadow: 0 1px 2px color-mix(in oklab, var(--primary) 55%, transparent);
+  --finale-motion-line: color-mix(in oklab, var(--olive) 42%, transparent);
+  --finale-motion-highlight: color-mix(in oklab, var(--linen) 12%, transparent);
+  --finale-motion-sheen: linear-gradient(105deg, transparent 42%, var(--finale-motion-highlight) 50%, transparent 58%);
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Nunito Sans', sans-serif;
   --shadow-soft: 0 14px 60px oklch(0.29 0.042 119 / 12%);
@@ -322,6 +325,40 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 .finale h2 { font-size: 94px; margin: 25px 0 12px; line-height: 1; }
 .finale > p { font-size: 14px; opacity: .75; }
 .finale .candle-art { width: 210px; margin: 40px 0; }
+.finale-awakening { position: relative; width: 210px; aspect-ratio: 662 / 672; margin: 40px 0; isolation: isolate; pointer-events: none; }
+.finale-scroll-layer { position: relative; width: 100%; height: 100%; transform: translateY(var(--finale-rise,0px)) scale(var(--finale-scale,1)); }
+.finale-pointer-layer { transform: perspective(900px) rotateX(var(--finale-tilt-x,0deg)) rotateY(var(--finale-tilt-y,0deg)); }
+.finale-entrance-layer,.finale-float-layer { position: relative; }
+.finale-awakened .finale-entrance-layer { animation: finale-enter 1.8s cubic-bezier(.2,.7,.2,1) both; }
+.finale-awakened .finale-float-layer { animation: finale-float 7s 1.8s ease-in-out infinite; }
+.finale .finale-vector-art { width: 100%; margin: 0; overflow: hidden; aspect-ratio: 1375 / 1390; }
+.finale-vector-art img { position: absolute; width: 290.91%; height: auto; max-width: none; left: -25.45%; top: -76.26%; }
+.finale-aura,.finale-orbits,.finale-particles { position: absolute; inset: 0; z-index: -1; opacity: var(--finale-orbit-opacity,1); }
+.finale-aura-wave { position: absolute; inset: 12% -35%; border: 1px solid var(--finale-motion-line); background: var(--finale-motion-highlight); border-radius: 50%; opacity: 0; }
+.finale-awakened .finale-aura-wave { animation: finale-aura 3s ease-out infinite; }
+.finale-awakened .finale-aura-wave-1 { animation-delay: 1s; }
+.finale-awakened .finale-aura-wave-2 { animation-delay: 2s; }
+.finale-orbit { position: absolute; width: 180%; height: 110%; left: -40%; top: -5%; fill: none; stroke: var(--finale-motion-line); stroke-width: .8; }
+.finale-awakened .finale-orbit-0 { animation: finale-orbit 24s linear infinite; }
+.finale-awakened .finale-orbit-1 { animation: finale-orbit 31s linear infinite reverse; }
+.finale-shimmer { position: absolute; inset: 16% 3% 3%; overflow: hidden; border-radius: 0 0 12% 12%; }
+.finale-shimmer span { position: absolute; inset: -15%; background: var(--finale-motion-sheen); opacity: 0; }
+.finale-awakened .finale-shimmer span { animation: finale-shimmer 6s 2s ease-in-out infinite; }
+.finale-particle { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: var(--olive); opacity: .35; }
+.finale-particle-0 { left: -30%; top: 20%; }
+.finale-particle-1 { right: -25%; top: 35%; animation-delay: -3s !important; }
+.finale-particle-2 { left: -15%; bottom: 10%; animation-delay: -5s !important; }
+.finale-particle-3 { right: -35%; bottom: 18%; animation-delay: -7s !important; }
+.finale-awakened .finale-particle { animation: finale-drift 9s ease-in-out infinite; }
+.finale-awakening:not(.finale-motion-visible) * { animation-play-state: paused; }
+@keyframes finale-enter { from { opacity: 0; transform: translateY(65px) scale(.7) rotate(-6deg); } to { opacity: 1; transform: none; } }
+@keyframes finale-float { 0%,100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(-16px) rotate(1.5deg); } }
+@keyframes finale-aura { from { opacity: .3; transform: scale(.6); } to { opacity: 0; transform: scale(1.8); } }
+@keyframes finale-orbit { from { transform: rotate(-16deg) rotateY(0deg); } to { transform: rotate(-16deg) rotateY(360deg); } }
+@keyframes finale-shimmer { 0%,15% { opacity: 0; transform: translateX(-100%); } 25% { opacity: .6; } 50%,100% { opacity: 0; transform: translateX(100%); } }
+@keyframes finale-drift { 0%,100% { transform: translate(0,0); opacity: .15; } 50% { transform: translate(7px,-18px); opacity: .4; } }
+@media (max-width: 767px), (pointer: coarse) { .finale-orbit-1,.finale-particles,.finale-aura-wave-1,.finale-aura-wave-2 { display: none; } .finale-awakened .finale-float-layer { animation: none; } .finale-orbit { animation: none !important; } }
+@media (prefers-reduced-motion: reduce) { .finale-scroll-layer,.finale-pointer-layer,.finale-entrance-layer,.finale-float-layer { transform: none; opacity: 1; } .finale-aura,.finale-particles,.finale-shimmer { display: none; } .finale-orbit { transform: rotate(-16deg); } }
 .footer-bottom { margin-top: auto; display: flex; justify-content: space-between; width: 100%; align-items: end; text-align: left; border-top: 1px solid color-mix(in oklab,var(--linen) 20%,transparent); padding-top: 25px; }
 .footer-bottom .wordmark { font-size: 48px; }
 .footer-bottom p { font-size: 10px; margin-top: 10px; opacity: .7; }
