@@ -11,7 +11,7 @@
 
 ## Architecture
 - Keep the Vedic brand experience in the index route with anchored chapters; it is one continuous scroll narrative rather than separate content pages.
-- Reuse the original product through a dedicated CandleArtwork component and a transparent asset pointer; background isolation preserves the uploaded product pixels and never redraws the packaging.
+- Reuse the exact original transparent product PNG through CandleArtwork as a bundled image import so external deployments do not depend on Lovable's host-relative asset proxy; preserve uploaded product pixels and never redraw the packaging.
 - Select collection color artwork through the optional typed mood prop on CandleArtwork in both the collection and its dialogs; keep the original artwork as the default for every other scene. Recolored assets retain the original alpha, lid and label pixels to preserve packaging fidelity.
 - Keep shared motion in CSS and the browser-side scene hook; isolate ritual and hero Awakening motion in separate candle wrappers using native CSS/animation-frame equivalents because Framer Motion is not installed. Each wrapper owns its section-scoped transforms with mobile and reduced-motion guards; no server or persistent storage is needed.
 - Treat collection moods as editorial concepts until confirmed specifications arrive; never invent product claims or contact destinations.
