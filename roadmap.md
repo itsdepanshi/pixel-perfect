@@ -1,5 +1,8 @@
 # Vedic experience
 
+- [x] Use the official uploaded SVG for website logos and favicons; verify desktop, mobile, refresh, and metadata.
+- [ ] Verify official logo and browser icons on live Vercel; awaits deployment and its URL.
+
 - [x] Build the immersive brand page and scroll-driven ritual.
 - [x] Incorporate the uploaded Vedic candle PNG without redrawing the product.
 - [x] Add collection mood details and quiet navigation.

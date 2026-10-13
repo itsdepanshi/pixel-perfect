@@ -30,7 +30,7 @@ const moods = [
   { name: 'Balance', subtitle: 'Find your own kind of harmony.', mood: 'Centered · Mindful · Soft', story: 'A pause between doing and being. Meet yourself in the middle, and make space for a gentler rhythm.' },
 ] satisfies { name: CandleMood; subtitle: string; mood: string; story: string }[];
 const chapters = ['Home', 'Story', 'Ritual', 'Collection', 'About'];
-function Brand() { return <span className="brand-sign"><Leaf strokeWidth={1} /><span className="wordmark">vedic</span></span>; }
+function Brand() { return <img className="brand-logo" src="/vedic-logo.svg" alt="Vedic" width={252} height={144} />; }
 function RevealWords({ text }: { text: string }) { return <span className="letter-reveal" aria-label={text}>{Array.from(text).map((letter, index) => <span aria-hidden="true" key={index}>{letter === ' ' ? '\u00a0' : letter}</span>)}</span>; }
 
 function Index() {
@@ -56,7 +56,7 @@ function Index() {
     <main>
       <section id="home" className="hero" aria-label="The world of Vedic">
         <img className="hero-background" src={heroBotanical} width={1536} height={1024} alt="" aria-hidden="true" />
-        <div className="hero-kicker"><span className="eyebrow">Rooted in nature. Made for the soul.</span><h1 className="hero-title">VEDIC</h1></div>
+        <div className="hero-kicker"><span className="eyebrow">Rooted in nature. Made for the soul.</span><h1 className="hero-title"><img className="hero-brand-logo" src="/vedic-logo.svg" alt="Vedic" width={252} height={144} /></h1></div>
         <span className="vertical-note eyebrow">A little light. A deeper connection.</span>
         <div className="hero-index eyebrow">01 <span /> 06</div>
         <div className="hero-editorial hero-editorial-left"><span className="hero-editorial-rule" aria-hidden="true" /><p>01 — THE ART OF SLOWING DOWN</p></div>
