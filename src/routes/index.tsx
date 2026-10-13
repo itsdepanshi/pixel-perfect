@@ -10,7 +10,6 @@ import { FinaleAwakening } from '@/components/finale-awakening';
 import { useVedicScene } from '@/hooks/use-vedic-scene';
 import botanical from '@/assets/vedic-botanical.jpg';
 import heroBotanical from '@/assets/vedic-hero-botanical.jpg';
-import vedicLogo from '@/assets/vedic-logo.svg';
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
@@ -31,7 +30,7 @@ const moods = [
   { name: 'Balance', subtitle: 'Find your own kind of harmony.', mood: 'Centered · Mindful · Soft', story: 'A pause between doing and being. Meet yourself in the middle, and make space for a gentler rhythm.' },
 ] satisfies { name: CandleMood; subtitle: string; mood: string; story: string }[];
 const chapters = ['Home', 'Story', 'Ritual', 'Collection', 'About'];
-function Brand() { return <span className="brand-sign"><img className="brand-logo" src={vedicLogo} alt="Vedic" width={252} height={144} /></span>; }
+function Brand() { return <span className="brand-sign"><Leaf strokeWidth={1} /><span className="wordmark">vedic</span></span>; }
 function RevealWords({ text }: { text: string }) { return <span className="letter-reveal" aria-label={text}>{Array.from(text).map((letter, index) => <span aria-hidden="true" key={index}>{letter === ' ' ? '\u00a0' : letter}</span>)}</span>; }
 
 function Index() {

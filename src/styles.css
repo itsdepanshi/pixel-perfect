@@ -172,9 +172,6 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 .wordmark { font-family: var(--font-display); font-size: 35px; font-weight: 500; line-height: 1; }
 .brand-sign { display: flex; align-items: center; gap: 9px; }
 .brand-sign svg { width: 21px; height: 28px; }
-.brand-logo { display: block; height: 56px; width: auto; border-radius: 6px; }
-.footer-bottom .brand-logo { height: 84px; }
-@media (max-width: 640px) { .brand-logo { height: 44px; } }
 .quiet-nav { display: flex; align-items: center; gap: 30px; }
 .nav-link { font-size: 12px; position: relative; text-decoration: none; }
 .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; right: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .4s; }
