@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Vedic — A little everyday ritual" },
+      { title: "Vedic — Light up the Vibe" },
       { name: "description", content: "The world of Vedic. Natural inspiration, ancient wisdom, and a little everyday ritual." },
       { property: "og:title", content: "Vedic — A little everyday ritual" },
       { property: "og:description", content: "Light up the Vibe with Vedic." },
@@ -91,7 +91,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
     ],
   }),
   shellComponent: RootShell,
