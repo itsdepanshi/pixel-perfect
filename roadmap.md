@@ -9,5 +9,5 @@
 - [x] Implement and verify The Vedic Awakening on the existing opening hero.
 - [x] Animate the final “Light up the vibe.” slide with the original PNG candle and gently drifting leaves; verify desktop, mobile and reduced motion.
 - [x] Apply and verify the four requested collection candle colors and matching detail images.
-- [ ] Bundle the original candle for external deployment and verify loading after refresh; live Vercel verification awaits the deployment URL.
+- [x] Bundle the original candle for external deployment and verify loading after refresh; live Vercel verification awaits the deployment URL.
 - [ ] Exact font/color files, confirmed collection specifications, and contact/social destinations await brand assets.
