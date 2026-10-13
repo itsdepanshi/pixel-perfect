@@ -10,7 +10,6 @@
 <!-- LOVABLE:END -->
 
 ## Architecture
-- Serve the exact uploaded brand SVG from public/vedic-logo.svg for all logo placements and derive square favicon fallbacks from that same complete artwork; public assets work on external hosts without the Lovable asset proxy.
 - Keep the Vedic brand experience in the index route with anchored chapters; it is one continuous scroll narrative rather than separate content pages.
 - Reuse the exact original transparent product PNG through CandleArtwork as a bundled image import so external deployments do not depend on Lovable's host-relative asset proxy; preserve uploaded product pixels and never redraw the packaging.
 - Select collection color artwork through the optional typed mood prop on CandleArtwork in both the collection and its dialogs; keep the original artwork as the default for every other scene. Recolored assets retain the original alpha, lid and label pixels to preserve packaging fidelity.

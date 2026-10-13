@@ -169,8 +169,9 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 .vedic-page { overflow: clip; }
 .eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: 0; line-height: 1.8; }
 .site-header { position: absolute; z-index: 20; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: 30px 5%; }
-.brand-logo { display: block; width: 126px; height: 72px; object-fit: contain; flex-shrink: 0; }
-.hero-brand-logo { display: block; width: 333px; height: 190px; object-fit: contain; margin-inline: auto; }
+.wordmark { font-family: var(--font-display); font-size: 35px; font-weight: 500; line-height: 1; }
+.brand-sign { display: flex; align-items: center; gap: 9px; }
+.brand-sign svg { width: 21px; height: 28px; }
 .quiet-nav { display: flex; align-items: center; gap: 30px; }
 .nav-link { font-size: 12px; position: relative; text-decoration: none; }
 .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; right: 0; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .4s; }
@@ -372,7 +373,7 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
 @media (max-width: 767px), (pointer: coarse) { .finale-orbit-1,.finale-particles,.finale-aura-wave-1,.finale-aura-wave-2 { display: none; } .finale-awakened .finale-float-layer { animation: none; } .finale-orbit { animation: none !important; } }
 @media (prefers-reduced-motion: reduce) { .finale-scroll-layer,.finale-pointer-layer,.finale-entrance-layer,.finale-float-layer { transform: none; opacity: 1; } .finale-aura,.finale-particles,.finale-shimmer { display: none; } .finale-orbit { transform: rotate(-16deg); } }
 .footer-bottom { margin-top: auto; display: flex; justify-content: space-between; width: 100%; align-items: end; text-align: left; border-top: 1px solid color-mix(in oklab,var(--linen) 20%,transparent); padding-top: 25px; }
-.footer-bottom .brand-logo { width: 140px; height: 80px; }
+.footer-bottom .wordmark { font-size: 48px; }
 .footer-bottom p { font-size: 10px; margin-top: 10px; opacity: .7; }
 .footer-links { display: flex; gap: 25px; align-items: center; }
 .detail-overlay { background: color-mix(in oklab,var(--deep-olive) 65%,transparent); }
@@ -419,6 +420,3 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
  .hero-caption { bottom: 95px; }
 }
 @media (max-width: 360px) { .hero-title { font-size: 94px; } .hero-object { width: 200px; } .hero-caption p { font-size: 20px; } }
-.site-header { padding-block: 12px; }
-@media (max-height: 800px) and (min-width: 768px) { .hero-brand-logo { width: 238px; height: 136px; } }
-@media (max-width: 767px) { .brand-logo { width: 105px; height: 60px; } .site-header { padding-block: 12px; } .hero-brand-logo { width: 175px; height: 100px; } .footer-bottom .brand-logo { width: 126px; height: 72px; } }
