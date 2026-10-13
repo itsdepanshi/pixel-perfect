@@ -30,7 +30,7 @@ const moods = [
   { name: 'Balance', subtitle: 'Find your own kind of harmony.', mood: 'Centered · Mindful · Soft', story: 'A pause between doing and being. Meet yourself in the middle, and make space for a gentler rhythm.' },
 ] satisfies { name: CandleMood; subtitle: string; mood: string; story: string }[];
 const chapters = ['Home', 'Story', 'Ritual', 'Collection', 'About'];
-function Brand() { return <span className="brand-sign"><Leaf strokeWidth={1} /><span className="wordmark">vedic</span></span>; }
+function Brand() { return <span className="brand-sign"><img src="/vedic-logo.svg" alt="Vedic" className="brand-logo" width={128} height={72} /></span>; }
 function RevealWords({ text }: { text: string }) { return <span className="letter-reveal" aria-label={text}>{Array.from(text).map((letter, index) => <span aria-hidden="true" key={index}>{letter === ' ' ? '\u00a0' : letter}</span>)}</span>; }
 
 function Index() {

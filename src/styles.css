@@ -420,3 +420,4 @@ h1,h2,h3,.display { font-family: var(--font-display); font-weight: 400; letter-s
  .hero-caption { bottom: 95px; }
 }
 @media (max-width: 360px) { .hero-title { font-size: 94px; } .hero-object { width: 200px; } .hero-caption p { font-size: 20px; } }
+.brand-logo { height: 52px; width: auto; display: block; } .footer-bottom .brand-logo { height: 84px; } @media (max-width: 640px) { .brand-logo { height: 42px; } }
