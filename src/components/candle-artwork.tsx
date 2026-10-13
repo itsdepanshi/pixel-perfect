@@ -1,4 +1,4 @@
-import candleAsset from '@/assets/vedic-candle-transparent.png.asset.json';
+import candleOriginal from '@/assets/vedic-candle-transparent.png';
 import calm from '@/assets/vedic-candle-calm.png';
 import ground from '@/assets/vedic-candle-ground.png';
 import glow from '@/assets/vedic-candle-glow.png';
