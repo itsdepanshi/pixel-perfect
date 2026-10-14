@@ -10,7 +10,8 @@ import { FinaleAwakening } from '@/components/finale-awakening';
 import { useVedicScene } from '@/hooks/use-vedic-scene';
 import botanical from '@/assets/vedic-botanical.jpg';
 import heroBotanical from '@/assets/vedic-hero-botanical.jpg';
-import vedicLogo from '@/assets/vedic-logo.svg';
+import vedicLogo from '@/assets/vedic-logo-transparent.svg';
+import vedicLogoDark from '@/assets/vedic-logo-dark.svg';
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
@@ -31,7 +32,7 @@ const moods = [
   { name: 'Balance', subtitle: 'Find your own kind of harmony.', mood: 'Centered · Mindful · Soft', story: 'A pause between doing and being. Meet yourself in the middle, and make space for a gentler rhythm.' },
 ] satisfies { name: CandleMood; subtitle: string; mood: string; story: string }[];
 const chapters = ['Home', 'Story', 'Ritual', 'Collection', 'About'];
-function Brand() { return <span className="brand-sign"><img className="brand-logo" src={vedicLogo} alt="Vedic" width={252} height={144} /></span>; }
+function Brand({ dark = false }: { dark?: boolean }) { return <span className="brand-sign"><img className="brand-logo" src={dark ? vedicLogoDark : vedicLogo} alt="Vedic" width={252} height={144} /></span>; }
 function RevealWords({ text }: { text: string }) { return <span className="letter-reveal" aria-label={text}>{Array.from(text).map((letter, index) => <span aria-hidden="true" key={index}>{letter === ' ' ? '\u00a0' : letter}</span>)}</span>; }
 
 function Index() {
@@ -48,7 +49,7 @@ function Index() {
   return <div className="vedic-page" ref={pageRef}>
     <div ref={cursorRef} className="cursor" aria-hidden="true" />
     <header className="site-header">
-      <Button variant="ritual" asChild><a href="#home" aria-label="Vedic home"><Brand /></a></Button>
+      <Button variant="ritual" asChild><a href="#home" aria-label="Vedic home"><Brand dark /></a></Button>
       {navigation()}
       <Button variant="ritual" className="mobile-menu" aria-label={menu ? 'Close navigation' : 'Open navigation'} onClick={() => setMenu(!menu)}>{menu ? <X /> : <Menu />}</Button>
       {menu && <div className="menu-panel">{navigation()}</div>}
