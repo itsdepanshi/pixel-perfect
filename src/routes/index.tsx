@@ -49,7 +49,7 @@ function Index() {
   return <div className="vedic-page" ref={pageRef}>
     <div ref={cursorRef} className="cursor" aria-hidden="true" />
     <header className="site-header">
-      <Button variant="ritual" asChild><a href="#home" aria-label="Vedic home"><Brand /></a></Button>
+      <Button variant="ritual" asChild><a href="#home" aria-label="Vedic home"><Brand dark /></a></Button>
       {navigation()}
       <Button variant="ritual" className="mobile-menu" aria-label={menu ? 'Close navigation' : 'Open navigation'} onClick={() => setMenu(!menu)}>{menu ? <X /> : <Menu />}</Button>
       {menu && <div className="menu-panel">{navigation()}</div>}
