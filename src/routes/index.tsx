@@ -10,7 +10,7 @@ import { FinaleAwakening } from '@/components/finale-awakening';
 import { useVedicScene } from '@/hooks/use-vedic-scene';
 import botanical from '@/assets/vedic-botanical.jpg';
 import heroBotanical from '@/assets/vedic-hero-botanical.jpg';
-import vedicLogo from '@/assets/vedic-logo.svg';
+import vedicLogo from '@/assets/vedic-logo-transparent.svg';
 
 export const Route = createFileRoute('/')({
   head: () => ({ meta: [
